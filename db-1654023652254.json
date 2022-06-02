@@ -1,0 +1,217 @@
+{
+  "patients": [
+    {
+      "tarix": [
+        {}
+      ],
+      "siblings": [
+        {
+          "siblingFio": "ukasi",
+          "siblingOtaFio": "Uka",
+          "siblingAkaName": "Uka",
+          "siblingLavozim": "Uka",
+          "siblingTurarjoy": "Uka"
+        },
+        {
+          "siblingFio": "akasi",
+          "siblingOtaFio": "Singil",
+          "siblingAkaName": "Singil",
+          "siblingLavozim": "Singil",
+          "siblingTurarjoy": "Singil"
+        }
+      ],
+      "rasm": "https://img.freepik.com/free-photo/medium-shot-happy-man-smiling_23-2148221808.jpg?size=626&ext=jpg",
+      "ism": "Jasurbek Muhammadiyev",
+      "tugsana": "2022-05-12",
+      "millati": "o'zbek",
+      "partiyaviyligi": "bor",
+      "tamomlagan": "test",
+      "tugjoy": "Toshkent viloyati",
+      "tuman": "payariq tumani",
+      "manzil": "Toshkent shahar ",
+      "malumoti": "Oliy ma'lumotli",
+      "daraja": "bor",
+      "faoliyat": "test",
+      "otafio": "Onasi",
+      "tugsanajoyi": "Otasi",
+      "lavozim": "Onasi",
+      "turarjoy": "Onasi",
+      "tug'sanajoyi": "Onasi",
+      "id": 1
+    },
+    {
+      "tarix": [
+        {}
+      ],
+      "siblings": [
+        {
+          "siblingFio": "akasi",
+          "siblingOtaFio": "",
+          "siblingAkaName": "",
+          "siblingLavozim": "",
+          "siblingTurarjoy": ""
+        }
+      ],
+      "rasm": "https://img.freepik.com/free-photo/medium-shot-happy-man-smiling_23-2148221808.jpg?size=626&ext=jpg",
+      "ism": "Jasurbek Muhammadiyev",
+      "tugsana": "2022-04-28",
+      "millati": "o'zbek",
+      "partiyaviyligi": "yo'q",
+      "tamomlagan": "hhhhh",
+      "tugjoy": "Buxoro viloyati",
+      "tuman": "payariq tumani",
+      "manzil": "Toshkent shahar ",
+      "malumoti": "Oliy ma'lumotli",
+      "daraja": "bor",
+      "faoliyat": "jjjjjjjjjjjjj",
+      "otafio": "",
+      "tugsanajoyi": "",
+      "lavozim": "",
+      "turarjoy": "",
+      "tug'sanajoyi": "",
+      "id": 2
+    },
+    {
+      "tarix": [
+        {}
+      ],
+      "siblings": [
+        {
+          "siblingFio": "akasi",
+          "siblingOtaFio": "",
+          "siblingAkaName": "",
+          "siblingLavozim": "",
+          "siblingTurarjoy": ""
+        }
+      ],
+      "rasm": "https://img.freepik.com/free-photo/medium-shot-happy-man-smiling_23-2148221808.jpg?size=626&ext=jpg",
+      "ism": "Jasurbek Muhammadiyev",
+      "tugsana": "2022-05-19",
+      "millati": "o'zbek",
+      "partiyaviyligi": "bor",
+      "tamomlagan": "ttttt",
+      "tugjoy": "Samarkand viloyati",
+      "tuman": "payariq tumani",
+      "manzil": "Toshkent shahar ",
+      "malumoti": "Oliy ma'lumotli",
+      "daraja": "bor",
+      "faoliyat": "gujihgv",
+      "otafio": "hjbn",
+      "tugsanajoyi": "",
+      "lavozim": "",
+      "turarjoy": "",
+      "tug'sanajoyi": "",
+      "id": 3
+    },
+    {
+      "tarix": [
+        {}
+      ],
+      "siblings": [
+        {
+          "siblingFio": "akasi",
+          "siblingOtaFio": "",
+          "siblingAkaName": "",
+          "siblingLavozim": "",
+          "siblingTurarjoy": ""
+        }
+      ],
+      "rasm": "",
+      "ism": "",
+      "tugsana": "",
+      "millati": "",
+      "partiyaviyligi": "",
+      "tamomlagan": "",
+      "tugjoy": "",
+      "tuman": "",
+      "manzil": "",
+      "malumoti": "",
+      "daraja": "",
+      "faoliyat": "",
+      "otafio": "",
+      "tugsanajoyi": "",
+      "lavozim": "",
+      "turarjoy": "",
+      "tug'sanajoyi": "",
+      "id": 4
+    },
+    {
+      "tarix": [
+        {}
+      ],
+      "siblings": [
+        {
+          "siblingFio": "akasi",
+          "siblingOtaFio": "test-aka",
+          "siblingAkaName": "test-aka",
+          "siblingLavozim": "test-aka",
+          "siblingTurarjoy": "test-aka"
+        }
+      ],
+      "rasm": "https://img.freepik.com/free-photo/medium-shot-happy-man-smiling_23-2148221808.jpg?size=626&ext=jpg",
+      "ism": "Jasurbek Muhammadiyev",
+      "tugsana": "2022-05-05",
+      "millati": "o'zbek",
+      "partiyaviyligi": "bor",
+      "tamomlagan": "test",
+      "tugjoy": "Samarkand viloyati",
+      "tuman": "payariq tumani",
+      "manzil": "Toshkent shahar ",
+      "malumoti": "Oliy ma'lumotli",
+      "daraja": "bor",
+      "faoliyat": "test",
+      "otafio": "test-opa",
+      "otatugsanajoyi": "12.03.1966",
+      "otalavozim": "korxona",
+      "otaturarjoy": "Yakkabog'",
+      "onafio": "Onasi",
+      "onatugsanajoyi": "22.03.1970",
+      "onalavozim": "o'qituvchi",
+      "onaturarjoy": "Yakkabog",
+      "akafio": "Akasi",
+      "tug'sanajoyi": "test-opa",
+      "lavozim": "test-opa",
+      "turarjoy": "test-opa",
+      "id": 5
+    },
+    {
+      "tarix": [
+        {}
+      ],
+      "siblings": [
+        {
+          "siblingFio": "akasi",
+          "siblingOtaFio": "test-aka",
+          "siblingAkaName": "test-aka",
+          "siblingLavozim": "test-aka",
+          "siblingTurarjoy": "test-aka"
+        }
+      ],
+      "rasm": "https://img.freepik.com/free-photo/medium-shot-happy-man-smiling_23-2148221808.jpg?size=626&ext=jpg",
+      "ism": "Jasurbek Muhammadiyev",
+      "tugsana": "2022-04-28",
+      "millati": "o'zbek",
+      "partiyaviyligi": "bor",
+      "tamomlagan": "test",
+      "tugjoy": "Samarkand viloyati",
+      "tuman": "payariq tumani",
+      "manzil": "Toshkent shahar ",
+      "malumoti": "O'rta ma'lumotli",
+      "daraja": "bor",
+      "faoliyat": "test",
+      "otafio": "opasi",
+      "otatugsanajoyi": "12.03.1966",
+      "otalavozim": "korxona",
+      "otaturarjoy": "Yakkabog'",
+      "onafio": "Onasi",
+      "onatugsanajoyi": "22.03.1970",
+      "onalavozim": "o'qituvchi",
+      "onaturarjoy": "Yakkabog",
+      "akafio": "Akasi",
+      "tug'sanajoyi": "opasi",
+      "lavozim": "opasi",
+      "turarjoy": "opasi",
+      "id": 6
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <aside>
+      <ul class="aside_menu">
+        <li><a href="bemor.html" class="active">Foydalanuvchilar</a></li>
+        <li>
+          <button onclick="saveMain()">save div as pdf</button>
+        </li>
+      </ul>
+      <div class="line"></div>
+    </aside>
+    <main id="capture">
+      <div class="wrapper">
+        <div class="patient"></div>
+      </div>
+      <div class="modalbox">
+        <div class="modal">
+          <div class="modal_title">
+            Yangi kasallik tarixini ro’yhatdan o’tkazish
+          </div>
+
+          <div class="btns">
+            <button class="btns_cancel" onclick="toggleModal()">
+              Bekor qilish
+            </button>
+            <button class="btns_next" onclick="send(event)">Saqlash</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/app.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> -->
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+      let url_string = window.location.href; // www.test.com?filename=test
+      // console.log(window.location.href)
+      let url = new URL(url_string);
+      let paramValue = url.searchParams.get("id");
+      let patient = {};
+      fetch("http://localhost:3000/patients/" + paramValue)
+        .then((response) => response.json())
+        .then((p) => {
+          patient = p;
+          show(patient);
+        });
+
+      let form = document.forms.newhistory;
+      const send = (event) => {
+        let formData = new FormData(form);
+        let history = {};
+        formData.forEach((value, key) => {
+          history[key] = value;
+        });
+        patient.tarix.push(history);
+        fetch(`http://localhost:3000/patients/${paramValue}`, {
+          method: "put",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(patient),
+        })
+          .then((response) => response.json())
+          .then((updatedPatient) => {
+            patient = updatedPatient;
+            show(patient);
+          })
+          .finally(() => {
+            toggleModal();
+          });
+      };
+
+      function show(p) {
+        document.querySelector(".patient").innerHTML = `
+            <div class="patient_row">
+                    <div class="patient_img" style="background-image: url('${p.rasm}');"></div>
+                    <div class="patient_text">
+                        <div class="patient_name">${p.ism}</div>
+                        
+                        <div class="row">
+
+                            <div class="col-6">
+                                <div class="patient_info">
+                                    <div class="patient_title">Tug'ilgan sana:</div>
+                                    <div class="patient_val">${p.tugsana}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-6">
+                                <div class="patient_info">
+                                    <div class="patient_title">Tug'ilgan joyi:</div>
+                                    <div class="patient_val">${p.tugjoy} ${p.tuman}</div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-6">
+                                <div class="patient_info">
+                                    <div class="patient_title">Millati:</div>
+                                    <div class="patient_val">${p.millati}</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="patient_info">
+                                    <div class="patient_title">Partiyaviyligi:</div>
+                                    <div class="patient_val">${p.partiyaviyligi}</div>
+                                </div>
+                            </div>
+
+                                <div class="col-6">
+                                  <div class="patient_info">
+                                    <div class="patient_title">Qaysi tuman yoki shahar:</div>
+                                    <div class="patient_val">${p.tuman}</div>
+                                </div></div>
+
+                                
+
+                              <div class="col-6">
+                                <div class="patient_info">
+                                    <div class="patient_title">Hozir yashab turgan manzili:</div>
+                                    <div class="patient_val">${p.manzil}</div>
+                                </div>  
+                              </div>
+                                
+                              <div class="col-6">
+                                <div class="patient_info">
+                                    <div class="patient_title">Ma'lumoti:</div>
+                                    <div class="patient_val">${p.malumoti}</div>
+                                </div>  
+                              </div>
+                                
+
+                              <div class="col-6">
+                                <div class="patient_info">
+                                    <div class="patient_title">Ilmiy darajasi:</div>
+                                    <div class="patient_val">${p.daraja}</div>
+                                </div>  
+                              </div>
+                                
+                              <div class="col-12">
+                                <div class="patient_info">
+                                    <div class="patient_title">Tamomlagan:</div>
+                                    <div class="patient_val">${p.tamomlagan}</div>
+                                </div>  
+                              </div>
+                                
+                              <div class="col-12">
+                                <div class="patient_info">
+                                    <div class="patient_title">Mehnat faoliyati:</div>
+                                    <div class="patient_val">${p.faoliyat}</div>
+                                </div>  
+                              </div>
+                                
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="patient_box">
+                    <div class="patient_stitle">Qarindoshlari haqida malumotlar</div>
+                    <div class="row">
+
+                        <table>
+                        <tr>
+                            <th>Qarindoshlari</th>
+                            <th>FISH</th>
+                            <th>Tug'ilgan sanasi,joyi</th>
+                            <th>Ish joyi va lavozimi</th>
+                            <th>Turar joyi</th>
+                        </tr>
+                        <tr>
+                            <td>Otasi</td>
+                            <td>${p.otafio}</td>
+                            <td>${p.otatugsanajoyi}</td>
+                            <td>${p.otalavozim}</td>
+                            <td>${p.otaturarjoy}</td>
+                        </tr>
+                        <tr>
+                            <td>Onasi</td>
+                            <td>${p.onafio}</td>
+                            <td>${p.onatugsanajoyi}</td>
+                            <td>${p.onalavozim}</td>
+                            <td>${p.onaturarjoy}</td>
+                        </tr>
+                       ${siblingsForeach(p.siblings)}
+
+                    </table>
+                    </div>
+                </div>
+                </div>`;
+      }
+
+      const siblingsForeach = (siblings) => {
+        let html = "";
+        for (const sibling of siblings) {
+          html += `
+                <tr>
+                    <td>${sibling.sibling}</td>
+                    <td>${sibling.siblingFio}</td>
+                    <td>${sibling.siblingTugSanaJoyi}</td>
+                    <td>${sibling.siblingLavozim}</td>
+                    <td>${sibling.siblingTurarJoy}</td>
+                    
+                </tr>
+               
+                `;
+        }
+        return html;
+      };
+
+      window.html2canvas = html2canvas;
+      window.jsPDF = window.jspdf.jsPDF;
+
+      const saveMain = () => {
+        const capture = document.querySelector("#capture");
+        const width = capture.scrollWidth;
+        const height = capture.scrollHeight;
+        html2canvas(capture, {
+          allowTaint: true,
+          useCORS: true,
+          scale: 1,
+          width: width,
+          height: height,
+        }).then((canvas) => {
+          const img = canvas.toDataURL("image/png");
+          const doc = new jsPDF({
+            orientation: "landscape",
+            unit: "px",
+            format: [width, height],
+          });
+          doc.setFont("Arial");
+          doc.getFontSize(11);
+          doc.addImage(img, "PNG", 0, 0, width, height);
+          doc.save("Mypdf.pdf");
+        });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Ma'lumotnoma</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="search">
+          <img src="./img/qidiruv.png" alt="" />
+          <input type="text" placeholder="Qidiruv" />
+        </div>
+      </header>
+      <div class="wrapper">
+        <div class="whitebox">
+          <div class="btitle">Foydalanuvchilar</div>
+          <table>
+            <tr>
+              <td>
+                <a href="bemorsahifa.html"><img src="/img/eye.png" alt="" /></a>
+                <a href="#"><img src="/img/edit.png" alt="" /></a>
+                <a href="#"><img src="/img/delte.png" alt="" /></a>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <button class="newdata" onclick="toggleModal()">
+          <img src="./img/new.png" alt="" />
+        </button>
+        <div class="modal_box">
+          <div class="modal" style="overflow-y: scroll">
+            <div class="modal_title">Foydalanuvchini ro'yxatdan o'tkazish</div>
+            <div class="modal_step">1</div>
+            <div class="modal_subtitle">Shaxsiy ma’lumotlar</div>
+            <form name="newpatient">
+              <div class="section section-1" style="display: flex; gap: 2rem">
+                <div>
+                  <!-- Rasm -->
+                  <div>
+                    <input
+                      type="text"
+                      id="bdate"
+                      name="rasm"
+                      placeholder="Rasm "
+                    />
+                  </div>
+                  <!-- FISH -->
+                  <div>
+                    <input
+                      type="text"
+                      id="bdate"
+                      name="ism"
+                      placeholder="FISH "
+                    />
+                  </div>
+                  <!-- Tug'ilgan yili -->
+                  <div>
+                    <input
+                      type="date"
+                      id="bdate"
+                      name="tugsana"
+                      placeholder="Tug'ilgan yili"
+                    />
+                  </div>
+                  <script>
+                    (async () => {
+                      let data = await fetch('https://fakestoreapi.com/products');
+                          data = await data.json();
+                          console.log(data);
+                    })();
+                  </script>
+
+                  <!-- Millati -->
+                  <div>
+                    <input type="text" placeholder="Millati" name="millati" />
+                  </div>
+
+                  <!-- Partiyaviyligi -->
+                  <div>
+                    <select name="partiyaviyligi" id="">
+                      <option value="">Partiyaviyligi</option>
+                      <option value="bor">Bor</option>
+                      <option value="yo'q">Yo'q</option>
+                    </select>
+                  </div>
+
+                  <!-- Tamomlagan -->
+                  <div>
+                    <textarea
+                      name="tamomlagan"
+                      placeholder="Tamomlagan"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div>
+                  <!-- tugilgan joy -->
+                  <div>
+                    <select name="tugjoy" id="">
+                      <option value="">Tug’ilgan hudud</option>
+                      <option value="Toshkent viloyati">
+                        Toshkent viloyati
+                      </option>
+                      <option value="Samarkand viloyati">
+                        Samarkand viloyati
+                      </option>
+                      <option value="Buxoro viloyati">Buxoro viloyati</option>
+                      <option value="Andijon viloyati">Andijon viloyati</option>
+                    </select>
+                  </div>
+
+                  <!-- Tuman yoki shahar -->
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Qaysi tuman yoki shahar"
+                      name="tuman"
+                    />
+                  </div>
+
+                  <!-- Hozir yashab turgan manzili -->
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Hozir yashab turgan manzili"
+                      name="manzil"
+                    />
+                  </div>
+
+                  <!-- Malumoti -->
+                  <div>
+                    <select name="malumoti" id="">
+                      <option value="">Ma’lumoti</option>
+                      <option value="O'rta ma'lumotli">O'rta ma'lumotli</option>
+                      <option value="Oliy ma'lumotli">Oliy ma'lumotli</option>
+                      <option value="Magistr">Magistr</option>
+                    </select>
+                  </div>
+
+                  <!-- Ilmiy darajasi -->
+                  <div>
+                    <select name="daraja">
+                      <option value="">Ilmiy darajasi</option>
+                      <option value="bor">Bor</option>
+                      <option value="yuq">Yo'q</option>
+                    </select>
+                  </div>
+
+                  <!-- Mehnat faoliyati -->
+                  <div>
+                    <textarea
+                      name="faoliyat"
+                      placeholder=" Mehnat faoliyati"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div id="step-2" class="row section section-2">
+                <table id="modalTable">
+                  <tr>
+                    <th>Qarindoshlari</th>
+                    <th>FISH</th>
+                    <th>Tug'ilgan sanasi,joyi</th>
+                    <th>Ish joyi va lavozimi</th>
+                    <th>Turar joyi</th>
+                  </tr>
+                  <!-- Otasi malumotlari -->
+                  <tr>
+                    <td>Otasi</td>
+                    <td>
+                      <input type="text" placeholder="FISH" name="otafio" />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Tug'ilgan sanasi,joyi"
+                        name="otatugsanajoyi"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Ish joyi va lavozimi"
+                        name="otalavozim"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Turar joyi"
+                        name="otaturarjoy"
+                      />
+                    </td>
+                  </tr>
+                  <!-- Ona malumotlari -->
+                  <tr>
+                    <td>Onasi</td>
+                    <td>
+                      <input type="text" placeholder="FISH" name="onafio" />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Tug'ilgan sanasi,joyi"
+                        name="onatugsanajoyi"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Ish joyi va lavozimi"
+                        name="onalavozim"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Turar joyi"
+                        name="onaturarjoy"
+                      />
+                    </td>
+                  </tr>
+
+                  <!-- Sibling malumotlari -->
+                  <tr>
+                    <td>
+                      <select name="sibling" id="">
+                        <option value="akasi">Akasi</option>
+                        <option value="ukasi">Ukasi</option>
+                        <option value="opasi">Opasi</option>
+                        <option value="singlisi">Singlisi</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input type="text" placeholder="FISH" name="siblingFio" />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Tug'ilgan sanasi,joyi"
+                        name="siblingTugSanaJoyi"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Ish joyi va lavozimi"
+                        name="siblingLavozim"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Turar joyi"
+                        name="siblingTurarJoy"
+                      />
+                    </td>
+                  </tr>
+                </table>
+                <div class="addSibling" onclick="addSibling()">Yangi a'zo qo'shish</div>
+              </div>
+            </form>
+            <div class="btns">
+              <button class="btns_cancel" onclick="toggleModal()">
+                Bekor qilish
+              </button>
+              <button class="btns_next" onclick="nextSection(event)">
+                Keyingi bo’lim
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="notifbox">Ma'lumot qo'shildi.</div>
+      </div>
+    </main>
+    <script src="./js/app.js"></script>
+    <script>
+      let sibling = 0;
+      const modalTable = document.querySelector("#modalTable");
+      const addSibling = () => {
+        sibling++;
+        const siblingHTML = `
+        <tr>
+        <td>
+            <select name="sibling-${sibling}" id="">
+            <option value="akasi">Akasi</option>
+            <option value="ukasi">Ukasi</option>
+            <option value="opasi">Opasi</option>
+            <option value="singlisi">Singlisi</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" placeholder="FISH" name="siblingFio-${sibling}" />
+        </td>
+        <td>
+            <input
+            type="text"
+            placeholder="Tug'ilgan sanasi,joyi"
+            name="siblingTugSanaJoyi-${sibling}"
+            />
+        </td>
+        <td>
+            <input
+            type="text"
+            placeholder="Ish joyi va lavozimi"
+            name="siblingLavozim-${sibling}"
+            />
+        </td>
+        <td>
+            <input type="text" placeholder="Turar joyi" name="siblingTurarJoy-${sibling}" />
+        </td>
+        </tr>
+        `;
+        modalTable.insertAdjacentHTML("beforeend", siblingHTML);
+      };
+      let bemorlar = [];
+      fetch("http://localhost:3000/patients")
+        .then((response) => response.json())
+        .then((patients) => {
+          bemorlar = patients;
+          show();
+        });
+      let table = document.querySelector("table");
+      const show = () => {
+        let str =
+          "<tr><th>Ism-sharif</th><th>Telefon raqam</th><th>Tug`ilgan yili</th></tr>";
+        bemorlar.forEach((bemor, index) => {
+          str += `<tr>    
+                            <td>
+                                <div class="avatar" style="background-image: url('${bemor.rasm}');"></div>
+                                ${bemor.ism}
+                            </td>
+                            <td>${bemor.telefon}</td>
+                            <td>${bemor.tugsana}</td>
+                           
+                            <td>
+                                <a href="bemorsahifa.html?id=${bemor.id}">
+                                    <img src="img/eye.png" alt="">
+                                </a>
+                                <a href="#"><img src="img/edit.png" alt=""></a>
+                                <a href="#" onclick='del(${index})'><img src="img/delte.png" alt=""></a>
+                            </td>
+                        </tr>`;
+        });
+        table.innerHTML = str;
+      };
+
+      function del(index) {
+        fetch("http://localhost:3000/patients/" + bemorlar[index].id, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((delInfo) => console.log(delInfo))
+          .finally(() => {
+            bemorlar.splice(index, 1);
+            show();
+          });
+      }
+
+      // yangi bemor qo'shish
+      let sectionN = 1;
+      let titles = [
+        "",
+        "Shaxsiy ma’lumotlar",
+        "Qarindoshlari haqida ma’lumotlar",
+      ];
+      let mTitle = document.querySelector(".modal_subtitle");
+      let mStep = document.querySelector(".modal_step");
+      let formPatient = document.forms.newpatient;
+      let tarixArr = [
+        "davolanishsana",
+        "kasallikturi",
+        "shifokorfio",
+        "davolanishmanzil",
+        "davolanishdiagnozi",
+      ];
+      const nextSection = (e) => {
+        if (sectionN == 3) {
+          let formData = new FormData(formPatient);
+          let patient = {
+            tarix: [],
+            siblings: [],
+          };
+          let tarix = {};
+          let siblings = {};
+          let inputs = 0;
+          formData.forEach((value, name) => {
+            if (name.includes("sibling")) {
+              inputs++;
+              siblings[name.split("-")[0]] = value;
+              if (inputs % 5 == 0) {
+                patient.siblings.push(siblings);
+                siblings = {};
+              }
+            } else if (tarixArr.indexOf(name) !== -1) tarix[name] = value;
+            else patient[name] = value;
+          });
+          patient.tarix.push(tarix);
+          fetch("http://localhost:3000/patients", {
+            method: "post",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(patient),
+          })
+            .then((response) => response.json())
+            .then((newPatient) => {
+              bemorlar.push(newPatient);
+              show();
+            })
+            .finally(() => {
+              toggleModal();
+              formPatient.reset();
+              notifBox.classList.add("show");
+              setTimeout(() => {
+                notifBox.classList.remove("show");
+              }, 3000);
+            });
+          return false;
+        }
+        document.querySelector(`.section.section-${sectionN++}`).style.display =
+          "none";
+        document.querySelector(`.section.section-${sectionN}`).style.display =
+          "flex";
+        mTitle.textContent = titles[sectionN];
+        mStep.textContent = sectionN;
+        if (sectionN == 2) {
+          e.target.textContent = "Yakunlash";
+        }
+      };
+    </script>
+  </body>
+</html>
